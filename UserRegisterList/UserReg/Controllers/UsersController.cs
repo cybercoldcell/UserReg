@@ -39,7 +39,7 @@ namespace UserReg.Controllers
         [HttpPost, ActionName("Create")]
         public IActionResult AddUser(Users objUsers)
         {
-            //string sDateReg = Request.Form["txtDateReg"];
+            string sDateReg = Request.Form["txtDateReg"];
 
             List<string> objList = objUsers.DayListCheckBox.Where(x => x.IsChecked).Select(x => x.Day).ToList();
 
@@ -53,7 +53,8 @@ namespace UserReg.Controllers
                     objUsers.SelectedDays += " ," + objItem;
                 }
             }
-            
+            objUsers.DateReg = Convert.ToDateTime(sDateReg);
+
             var objClient = new HttpClient();
 
             string sUri = _AppSettings.ApiUri; 
