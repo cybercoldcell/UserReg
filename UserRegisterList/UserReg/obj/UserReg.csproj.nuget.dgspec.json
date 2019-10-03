@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_Projects\\UserRegisterList\\UserReg\\UserReg.csproj": {}
+    "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserReg\\UserReg.csproj": {}
   },
   "projects": {
-    "C:\\_Projects\\UserRegisterList\\UserReg\\UserReg.csproj": {
+    "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserReg\\UserReg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_Projects\\UserRegisterList\\UserReg\\UserReg.csproj",
+        "projectUniqueName": "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserReg\\UserReg.csproj",
         "projectName": "UserReg",
-        "projectPath": "C:\\_Projects\\UserRegisterList\\UserReg\\UserReg.csproj",
+        "projectPath": "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserReg\\UserReg.csproj",
         "packagesPath": "C:\\Users\\cyber\\.nuget\\packages\\",
-        "outputPath": "C:\\_Projects\\UserRegisterList\\UserReg\\obj\\",
+        "outputPath": "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserReg\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

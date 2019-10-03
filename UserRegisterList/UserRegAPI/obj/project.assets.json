@@ -12542,11 +12542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_Projects\\UserRegisterList\\UserRegAPI\\UserRegAPI.csproj",
+      "projectUniqueName": "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserRegAPI\\UserRegAPI.csproj",
       "projectName": "UserRegAPI",
-      "projectPath": "C:\\_Projects\\UserRegisterList\\UserRegAPI\\UserRegAPI.csproj",
+      "projectPath": "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserRegAPI\\UserRegAPI.csproj",
       "packagesPath": "C:\\Users\\cyber\\.nuget\\packages\\",
-      "outputPath": "C:\\_Projects\\UserRegisterList\\UserRegAPI\\obj\\",
+      "outputPath": "C:\\_Projects\\Repository\\UserReg\\UserRegisterList\\UserRegAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
