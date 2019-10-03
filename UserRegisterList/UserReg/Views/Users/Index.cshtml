@@ -1,0 +1,137 @@
+﻿@model UserReg.Models.Users
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Add User</h2>
+
+<hr />
+<div id="frmAddUser">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="Name" class="control-label"></label>
+            </div>
+            <div class="col-md-4">
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="Email" class="control-label"></label>
+            </div>
+            <div class="col-md-4">
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <label asp-for="Gender" class="control-label"></label>
+            </div>
+            <div class="col-md-4">
+                <label><input asp-for="Gender" value="M" type="radio" />Male</label>
+                <label><input asp-for="Gender" value="F" type="radio" />Female</label>
+            </div>
+            <div class="col-md-4">
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4">
+                <span>Date registered :</span>
+            </div>
+            <div class="col-md-4">
+                @*@Html.TextBox("txtDateReg", "", new { id = "txtDateReg", @class = " pickadate form-control" })*@     
+                <input asp-for="DateReg"  id="txtDateReg" class="form-control "  />
+            </div>
+            <div class="col-md-4">
+                <span asp-validation-for="DateReg" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="row form-group chklist">
+            <div class="col-md-4">
+                Selected Days:
+            </div>
+            <div class="col-md-4">
+                @for (int i = 0; i < Model.DayListCheckBox.Count(); i++)
+                {
+                    <input asp-for="@Model.DayListCheckBox[i].IsChecked" type="checkbox" />
+                    <label asp-for="@Model.DayListCheckBox[i].Day">@Model.DayListCheckBox[i].Day</label>
+                    <input asp-for="@Model.DayListCheckBox[i].Day" type="hidden" />
+                }
+                <span class="errMsg text-danger">Please select at-least 1 day.</span>
+            </div>
+
+        </div>
+
+        <div class="row  form-group">
+            <div class="col-md-4">
+                <span>Add Request</span>
+            </div>
+            <div class="col-md-4">
+                <textarea asp-for="AddRequest" class="form-control"></textarea>
+            </div>
+            <div class="col-md-4">
+                <span asp-validation-for="AddRequest" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <input type="submit" value="Create" class="btn btn-success" id="btnSubmit"/>
+            </div>
+            
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="GetUserList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $('#txtDateReg').datepicker({
+         
+                dateFormat: 'dd/mm/yyyy',
+                minDate: new Date('01/01/2019'),
+                maxDate: new Date('30/06/2019')
+            });
+
+            $(".errMsg").hide();
+            $("#btnSubmit").click(function () {
+                var checked_checkboxes = $("#chklist input[type=checkbox]:checked");
+                if (checked_checkboxes.length == 0) {
+                    $(".errMsg").show();
+                    return false;
+                }
+                return true;
+            });
+        });
+
+
+    </script>
+
+
+}

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<UserReg.Models.Users>
+
+@{
+    ViewData["Title"] = "GetUserList";
+}
+
+<h2>List of Registered Users</h2>
+<hr />
+
+<div class="text-right">
+    <a asp-action="Index" class="btn btn-success">Add User</a>
+</div>
+  
+
+
+<div id="DataTable">
+</div>
+
+@section Scripts {
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+
+        $(function () {
+            onLoadTableData();
+        });
+
+        function onLoadTableData() {
+
+            var div = document.getElementById('DataTable');
+            var tbl = document.createElement('table');
+            tbl.classList.add("table");
+            tbl.setAttribute("id", "UserListTable");
+
+            var th = document.createElement('thead');
+            var thr = document.createElement('tr');
+            var thNo = document.createElement('th');
+            var thName = document.createElement('th');
+            var thEmail = document.createElement('th');
+            var thGender = document.createElement('th');
+            var thDateReg = document.createElement('th');
+            var thDateReg = document.createElement('th');
+            var thSelDays = document.createElement('th');
+            var thRequest = document.createElement('th');
+
+            thNo.innerHTML = "No";
+            thName.innerHTML = "Name";
+            thEmail.innerHTML = "Email";
+            thGender.innerHTML = "Gender";
+            thDateReg.innerHTML = "DateReg";
+            thSelDays.innerHTML = "SelectedDays";
+            thRequest.innerHTML = "AddRequest";
+
+            thr.appendChild(thNo);
+            thr.appendChild(thName);
+            thr.appendChild(thEmail);
+            thr.appendChild(thGender);
+            thr.appendChild(thDateReg);
+            thr.appendChild(thSelDays);
+            thr.appendChild(thRequest);
+            th.appendChild(thr);
+            tbl.appendChild(th);
+            div.appendChild(tbl);
+
+            @foreach(var obj in Model)
+            {
+                <text>AddRow(tbl, '@obj.Id', '@obj.Name', '@obj.Email', '@obj.Gender', '@obj.DateReg', '@obj.SelectedDays', '@obj.AddRequest');</text>
+            }
+        }
+
+        function AddRow(tbl, id, name, email, gender, datereg, selectdays, request) {
+
+            var tr = document.createElement('tr');
+            AddCell(tr, id);
+            AddCell(tr, name);
+            AddCell(tr, email);
+            AddCell(tr, gender);
+            AddCell(tr, datereg);
+            AddCell(tr, selectdays);
+            AddCell(tr, request);
+            tbl.appendChild(tr);
+        }
+
+        function AddCell(tr, val) {
+            var td = document.createElement('td');
+            td.innerHTML = val;
+            tr.appendChild(td);
+        }
+
+    </script>
+
+
+}

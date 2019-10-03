@@ -1,0 +1,13 @@
+C:\_Projects\UserRegAPI\bin\Debug\netcoreapp2.1\UserRegAPI.deps.json
+C:\_Projects\UserRegAPI\bin\Debug\netcoreapp2.1\UserRegAPI.runtimeconfig.json
+C:\_Projects\UserRegAPI\bin\Debug\netcoreapp2.1\UserRegAPI.runtimeconfig.dev.json
+C:\_Projects\UserRegAPI\bin\Debug\netcoreapp2.1\UserRegAPI.dll
+C:\_Projects\UserRegAPI\bin\Debug\netcoreapp2.1\UserRegAPI.pdb
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.csproj.CoreCompileInputs.cache
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.RazorAssemblyInfo.cache
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.RazorAssemblyInfo.cs
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.AssemblyInfoInputs.cache
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.AssemblyInfo.cs
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.RazorTargetAssemblyInfo.cache
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.dll
+C:\_Projects\UserRegAPI\obj\Debug\netcoreapp2.1\UserRegAPI.pdb
