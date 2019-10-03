@@ -13,7 +13,7 @@
 
         <div class="row form-group">
             <div class="col-md-4">
-                <label asp-for="Name" class="control-label"></label>
+                <span>Name :</span>
             </div>
             <div class="col-md-4">
                 <input asp-for="Name" class="form-control" />
@@ -25,7 +25,7 @@
 
         <div class="row form-group">
             <div class="col-md-4">
-                <label asp-for="Email" class="control-label"></label>
+                <span>Email :</span>
             </div>
             <div class="col-md-4">
                 <input asp-for="Email" class="form-control" />
@@ -36,7 +36,7 @@
         </div>
         <div class="row form-group">
             <div class="col-md-4">
-                <label asp-for="Gender" class="control-label"></label>
+                <span>Gender :</span>
             </div>
             <div class="col-md-4">
                 <label><input asp-for="Gender" value="M" type="radio" />Male</label>
@@ -60,8 +60,7 @@
             </div>
         </div>
 
-
-        <div class="row form-group chklist">
+        <div class="row form-group">
             <div class="col-md-4">
                 Selected Days:
             </div>
@@ -121,12 +120,15 @@
 
             $(".errMsg").hide();
             $("#btnSubmit").click(function () {
-                var checked_checkboxes = $("#chklist input[type=checkbox]:checked");
-                if (checked_checkboxes.length == 0) {
-                    $(".errMsg").show();
+               
+                if (jQuery('#frmAddUser input[type=checkbox]:checked').length > 0) {
+                   return true;
+                }
+                else {
+                     $(".errMsg").show();
                     return false;
                 }
-                return true;
+               
             });
         });
 
