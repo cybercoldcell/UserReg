@@ -57,6 +57,7 @@
             </div>
             <div class="col-md-4">
                 <span asp-validation-for="DateReg" class="text-danger"></span>
+                <span class="date_errMsg text-danger">The date range accept (01/01/2019 to 30/06/2019).</span>
             </div>
         </div>
 
@@ -111,22 +112,43 @@
     <script type="text/javascript">
 
         $(function () {
-            $('#txtDateReg').datepicker({
-                dateFormat: 'dd/mm/yy',
-                minDate: new Date('01/01/2019'),
-                maxDate: new Date('30/06/2019')
-            });
+            //$('#txtDateReg').datepicker({
+            //    dateFormat: 'dd/mm/yy',
+            //    minDate: new Date('01/01/2019'),
+            //    maxDate: new Date('30/06/2019')
+            //});
 
             $(".errMsg").hide();
+            $(".date_errMsg").hide();
+
             $("#btnSubmit").click(function () {
-               
+
+                var datereg = $("#txtDateReg").val();
+                var bResult = false;
+                var dt = new Date(datereg);
+
+                var minDate = new Date("2019-01-01");
+                var maxDate = new Date("2019-06-30");
+
+                if(dt >= minDate && dt <= maxDate)
+                {
+                    bResult = true;
+                }
+                else
+                {
+                    $(".date_errMsg").show();
+                    bResult = false;
+                }
+
                 if (jQuery('#frmAddUser input[type=checkbox]:checked').length > 0) {
-                   return true;
+                    if (!bResult) return false;
+                    return true;
                 }
                 else {
-                     $(".errMsg").show();
+                        $(".errMsg").show();
                     return false;
                 }
+              
                
             });
         });

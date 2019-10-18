@@ -70,6 +70,14 @@
 
         function AddRow(tbl, id, name, email, gender, datereg, selectdays, request) {
 
+            if (datereg != null) {
+
+                var ddmmyyyy = datereg.split(' ')[0];
+
+                datereg = ddmmyyyy; 
+            }
+           
+
             var tr = document.createElement('tr');
             AddCell(tr, id);
             AddCell(tr, name);
@@ -80,6 +88,8 @@
             AddCell(tr, request);
             tbl.appendChild(tr);
         }
+
+    
 
         function AddCell(tr, val) {
             var td = document.createElement('td');
